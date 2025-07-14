@@ -3,52 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <title>Fangzhou Sha</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500&family=Source+Serif+Pro:wght@600&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #f9f7f3;
-      color: #2c2c2c;
-      font-family: 'Work Sans', sans-serif;
-      font-size: 16px;
-      line-height: 1.75;
+    :root {
+      --bg: #eaf4f4;
+      --text: #222;
+      --subtext: #556;
+      --link: #0074a2;
     }
 
-    .container {
+    body {
+      margin: 0;
+      padding: 0 1.2rem;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Source Sans 3', system-ui, sans-serif;
+      line-height: 1.8;
+    }
+
+    main {
       max-width: 680px;
-      margin: 6em auto 4em auto;
-      background-color: #fff;
-      padding: 3em 2em;
-      border-radius: 12px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+      margin: 7vh auto 10vh;
     }
 
     h1 {
-      font-family: 'Crimson Text', serif;
-      font-size: 2.5em;
+      font-family: 'Source Serif Pro', serif;
+      font-size: clamp(2.4rem, 5vw, 3rem);
       font-weight: 600;
-      margin: 0 0 0.2em 0;
-      color: #1a1a1a;
+      margin-bottom: 0.2em;
+      color: var(--text);
     }
 
     h2 {
-      font-size: 1.1em;
-      font-weight: normal;
-      color: #555;
-      margin-top: 0;
-      font-style: italic;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--subtext);
+      margin: 0 0 2.2rem;
     }
 
     p {
-      margin: 1.2em 0;
+      margin: 1.2rem 0;
+      font-size: 1.05rem;
     }
 
     a {
-      color: #446699;
+      color: var(--link);
       text-decoration: none;
-      font-weight: 400;
+      font-weight: 500;
     }
 
     a:hover {
@@ -56,20 +58,22 @@
     }
 
     footer {
-      text-align: center;
-      margin-top: 3em;
-      font-size: 0.9em;
-      color: #999;
+      margin-top: 3.5rem;
+      font-size: 0.88rem;
+      color: var(--subtext);
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <main>
     <h1>Fangzhou Sha</h1>
-    <h2>Ph.D. Student in Economics, Southern Methodist University</h2>
-    <p>I am a doctoral student specializing in macroeconomics. My research explores monetary and fiscal policy, inflation dynamics, and the design of quantitative macroeconomic models.</p>
+    <h2>Ph.D. Student in Economics · Southern Methodist University</h2>
+
+    <p>I am a doctoral researcher specializing in macroeconomics. My interests include fiscal policy, inflation dynamics, and quantitative modeling.</p>
+
     <p>📧 <a href="mailto:fsha@smu.edu">fsha@smu.edu</a></p>
+
     <footer>Last updated July 2025</footer>
-  </div>
+  </main>
 </body>
 </html>
