@@ -27,11 +27,32 @@
       margin: 7vh auto 10vh;
     }
 
+    .header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    .header-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .profile-photo {
+      flex-shrink: 0;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(0,0,0,0.08);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
     h1 {
       font-family: 'Source Serif Pro', serif;
       font-size: clamp(2.4rem, 5vw, 3rem);
       font-weight: 600;
-      margin-bottom: 0.2em;
+      margin: 0 0 0.2em;
       color: var(--text);
     }
 
@@ -62,12 +83,36 @@
       font-size: 0.88rem;
       color: var(--subtext);
     }
+
+    @media (max-width: 600px) {
+      .header {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+      }
+
+      .profile-photo {
+        width: 110px;
+        height: 110px;
+      }
+
+      h2 {
+        margin-bottom: 1.6rem;
+      }
+    }
   </style>
 </head>
 <body>
   <main>
-    <h1>Fangzhou Sha</h1>
-    <h2>Ph.D. Student in Economics · Southern Methodist University</h2>
+    <div class="header">
+      <!-- 右侧：你的照片 -->
+      <img src="FangzhouSha.png" alt="Photo of Fangzhou Sha" class="profile-photo">
+      
+      <!-- 左侧：名字和头衔 -->
+      <div class="header-text">
+        <h1>Fangzhou Sha</h1>
+        <h2>Ph.D. Student in Economics · Southern Methodist University</h2>
+      </div>
+    </div>
 
     <p>I am a doctoral researcher specializing in macroeconomics. My interests include fiscal policy, inflation dynamics, and quantitative modeling.</p>
 
