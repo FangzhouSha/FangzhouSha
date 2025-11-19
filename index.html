@@ -13,6 +13,10 @@
       --link: #0074a2;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       padding: 0 1.2rem;
@@ -60,7 +64,14 @@
       font-size: 1.1rem;
       font-weight: 400;
       color: var(--subtext);
-      margin: 0 0 2.2rem;
+      margin: 0 0 0.8rem;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 2.2rem 0 0.4rem;
+      color: var(--text);
     }
 
     p {
@@ -76,6 +87,26 @@
 
     a:hover {
       text-decoration: underline;
+    }
+
+    /* 顶部导航：改成锚点 */
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.1rem;
+      font-size: 0.98rem;
+      margin: 0.4rem 0 0;
+    }
+
+    .nav a {
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+
+    /* 文档链接行 */
+    .doc-links {
+      margin-top: 0.5rem;
+      font-size: 0.98rem;
     }
 
     footer {
@@ -96,7 +127,11 @@
       }
 
       h2 {
-        margin-bottom: 1.6rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .nav {
+        margin-bottom: 0.4rem;
       }
     }
   </style>
@@ -107,18 +142,52 @@
       <!-- 右侧：你的照片 -->
       <img src="FangzhouSha.png" alt="Photo of Fangzhou Sha" class="profile-photo">
       
-      <!-- 左侧：名字和头衔 -->
+      <!-- 左侧：名字、头衔、导航 -->
       <div class="header-text">
         <h1>Fangzhou Sha</h1>
         <h2>Ph.D. Student in Economics · Southern Methodist University</h2>
+
+        <!-- 顶部导航：CV / Research / Teaching 锚点 -->
+        <nav class="nav">
+          <a href="#cv">CV</a>
+          <a href="#research">Research</a>
+          <a href="#teaching">Teaching</a>
+        </nav>
       </div>
     </div>
 
     <p>I am a doctoral researcher specializing in macroeconomics. My interests include fiscal policy, inflation dynamics, and quantitative modeling.</p>
 
+    <!-- CV Section -->
+    <section id="cv">
+      <h3>Curriculum Vitae</h3>
+      <p class="doc-links">
+        📄 <a href="FangzhouSha_CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a><br>
+        📑 <a href="FangzhouSha_JMP.pdf" target="_blank" rel="noopener">Job Market Paper</a>
+      </p>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research">
+      <h3>Research</h3>
+      <p>
+        Working papers and projects will be listed here.  
+        <!-- 你之后可以在这里加：标题、合作者、摘要简句、arXiv / SSRN / PDF 链接等 -->
+      </p>
+    </section>
+
+    <!-- Teaching Section -->
+    <section id="teaching">
+      <h3>Teaching</h3>
+      <p>
+        Teaching experience, courses, and evaluations will be summarized here.
+        <!-- 之后可以放：任课课程、学期、职责（instructor / TA）、教学奖项、教学理念链接等 -->
+      </p>
+    </section>
+
     <p>📧 <a href="mailto:fsha@smu.edu">fsha@smu.edu</a></p>
 
-    <footer>Last updated July 2025</footer>
+    <footer>Last updated November 2025</footer>
   </main>
 </body>
 </html>
