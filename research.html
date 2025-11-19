@@ -13,6 +13,10 @@
       --link: #0074a2;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       padding: 0 1.2rem;
@@ -23,8 +27,28 @@
     }
 
     main {
-      max-width: 780px;
-      margin: 6vh auto 8vh;
+      max-width: 680px;
+      margin: 5vh auto 10vh;
+    }
+
+    /* 左上导航：和主页统一 */
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.1rem;
+      font-size: 0.98rem;
+      margin: 0 0 2rem;
+    }
+
+    .nav a {
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .nav a:hover {
+      text-decoration: underline;
     }
 
     .header {
@@ -38,15 +62,10 @@
       min-width: 0;
     }
 
-    .name-link {
-      color: inherit;
-      text-decoration: none;
-    }
-
     .profile-photo {
       flex-shrink: 0;
-      width: 110px;
-      height: 110px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid rgba(0,0,0,0.08);
@@ -61,29 +80,29 @@
 
     h1 {
       font-family: 'Source Serif Pro', serif;
-      font-size: clamp(2.1rem, 4vw, 2.6rem);
+      font-size: clamp(2.2rem, 4.5vw, 2.8rem);
       font-weight: 600;
       margin: 0 0 0.2em;
       color: var(--text);
     }
 
     h2 {
-      font-size: 1rem;
+      font-size: 1.05rem;
       font-weight: 400;
       color: var(--subtext);
-      margin: 0 0 0.6rem;
+      margin: 0 0 0.8rem;
     }
 
     h3 {
       font-size: 1.05rem;
       font-weight: 600;
-      margin: 2rem 0 0.4rem;
+      margin: 2.0rem 0 0.4rem;
       color: var(--text);
     }
 
     p {
       margin: 0.9rem 0;
-      font-size: 1.02rem;
+      font-size: 1.05rem;
     }
 
     a {
@@ -96,46 +115,44 @@
       text-decoration: underline;
     }
 
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.1rem;
-      font-size: 0.96rem;
-      margin: 0.3rem 0 0;
-    }
-
-    .nav a {
-      font-weight: 500;
-      letter-spacing: 0.01em;
-    }
-
     ul {
-      margin: 0.2rem 0 1.0rem;
+      margin: 0.4rem 0 1.0rem;
       padding-left: 1.1rem;
       font-size: 1.0rem;
     }
 
     footer {
       margin-top: 3.0rem;
-      font-size: 0.86rem;
+      font-size: 0.88rem;
       color: var(--subtext);
     }
 
-    @media (max-width: 650px) {
+    @media (max-width: 600px) {
+      main {
+        margin-top: 3vh;
+      }
+
       .header {
         flex-direction: column-reverse;
         align-items: flex-start;
       }
 
       .profile-photo {
-        width: 100px;
-        height: 100px;
+        width: 110px;
+        height: 110px;
       }
     }
   </style>
 </head>
 <body>
   <main>
+    <!-- 左上导航：和主页一致 -->
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="teaching.html">Teaching</a>
+    </nav>
+
     <div class="header">
       <img
         src="FangzhouSha.png"
@@ -144,57 +161,45 @@
         id="profile-photo"
       >
       <div class="header-text">
-        <a href="index.html" class="name-link">
-          <h1>Fangzhou Sha</h1>
-        </a>
+        <h1>Fangzhou Sha</h1>
         <h2>Ph.D. Student in Economics · Southern Methodist University</h2>
-        <nav class="nav">
-          <a href="index.html#cv">CV</a>
-          <a href="research.html">Research</a>
-          <a href="teaching.html">Teaching</a>
-        </nav>
       </div>
     </div>
 
-    <p>
-      My research studies how monetary and fiscal policy interact with household heterogeneity to shape inflation, inequality, and the transmission of macroeconomic shocks.
-    </p>
+    <p>My research studies how monetary and fiscal policy interact with household heterogeneity and asset markets to shape inflation and inequality.</p>
 
-    <h3>Job Market Paper</h3>
-    <p>
-      <strong>Unfunded Fiscal Policy with Heterogeneity in Household Portfolios</strong><br>
-      <a href="Unfunded_Fiscal_Policy__slides___20mins___111525_.pdf" target="_blank" rel="noopener">Slides (20 minutes)</a>
-    </p>
-    <p>
-      I build a heterogeneous-agent New Keynesian model with incomplete markets, endogenous portfolio choice, and long-term nominal debt to study unfunded fiscal expansions not fully backed by higher future primary surpluses. Unfunded shocks work through price-level revaluation and portfolio rebalancing: inflation reduces the real value of outstanding nominal liabilities, redistributes wealth from nominal creditors to net debtors, and raises spending by high-MPC households. In the calibrated model, unfunded government purchases and transfers generate similar impulse responses and larger multipliers than funded policies, while compressing consumption inequality.
-    </p>
+    <section>
+      <h3>Job Market Paper</h3>
+      <p>
+        <strong>Unfunded Fiscal Policy with Heterogeneity in Household Portfolios</strong><br>
+        📄 <a href="FangzhouSha_JMP.pdf" target="_blank" rel="noopener">Job Market Paper (PDF)</a>
+      </p>
+      <p>
+        A two-asset HANK model with liquid and illiquid assets and long-term nominal government debt that quantifies how unfunded fiscal expansions move inflation, output, and inequality through price-level revaluation and redistribution across household portfolios.
+      </p>
+    </section>
 
-    <h3>Working Papers</h3>
-
-    <p>
-      <strong>Taylor Rules and Fiscal Attention to Inflation</strong>
-    </p>
-    <p>
-      I analyze equilibrium determinacy in a New Keynesian model where the primary surplus rule responds to both inflation and government debt and directly shifts the intertemporal IS curve. When fiscal policy targets inflation but not debt, I derive an analytical condition linking the monetary and fiscal inflation responses and show that determinacy can hold even with a Taylor coefficient below one if fiscal policy reacts strongly enough to inflation. When fiscal policy also stabilizes debt, numerical results show that part of the fiscal inflation response is absorbed by debt stabilization, so monetary policy must react more than one-for-one to inflation, with the required Taylor coefficient increasing in the degree of fiscal attention to inflation.
-    </p>
-
-    <p>
-      <strong>Identifying the Effects of Funded vs. Unfunded Fiscal Shocks</strong> (with Nathan S. Balke and Carlos Zarazaga)
-    </p>
-    <p>
-      We estimate a structural VAR for U.S. annual data using sign and zero restrictions on the present value of primary surpluses and the market value of government debt to distinguish funded deficit shocks—those offset by future surpluses—from unfunded shocks resolved through price-level adjustment. The identification delivers impulse responses and historical decompositions showing that funded deficit shocks are approximately Ricardian and have limited real effects, while unfunded deficit shocks raise inflation and real GDP growth, lower nominal returns on government debt on impact, and account for a meaningful share of post-1960 inflation fluctuations.
-    </p>
-
-    <p>
-      Recent and upcoming presentations include the SEA Graduate Student Sessions and the North Texas Economics Conference (NTxEC), as well as internal seminars and workshops at SMU.
-    </p>
+    <section>
+      <h3>Working Papers</h3>
+      <ul>
+        <li>
+          <strong>Taylor Rules and Fiscal Attention to Inflation</strong><br>
+          Determinacy conditions when both a Taylor rule and a primary surplus rule respond to inflation and debt.
+        </li>
+        <li>
+          <strong>Identifying the Effects of Funded vs. Unfunded Fiscal Shocks</strong> (with Nathan S. Balke and Carlos Zarazaga)<br>
+          A structural VAR that separates funded and unfunded deficit shocks using present-value restrictions and studies their distinct effects on inflation and real activity.
+        </li>
+      </ul>
+    </section>
 
     <footer>Last updated November 2025</footer>
   </main>
 
+  <!-- 切换头像脚本：和主页一致 -->
   <script>
-    const img1 = "FangzhouSha.png";
-    const img2 = "FangzhouSha_alt.png";
+    const img1 = "FangzhouSha.png";       // 默认照片
+    const img2 = "FangzhouSha_alt.png";   // 第二张照片（改成你的真实文件名）
 
     const profileImg = document.getElementById("profile-photo");
     let showingFirst = true;
