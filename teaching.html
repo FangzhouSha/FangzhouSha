@@ -13,6 +13,10 @@
       --link: #0074a2;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       padding: 0 1.2rem;
@@ -23,8 +27,28 @@
     }
 
     main {
-      max-width: 780px;
-      margin: 6vh auto 8vh;
+      max-width: 680px;
+      margin: 5vh auto 8vh;
+    }
+
+    /* 顶部导航：与主页、research 统一 */
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.1rem;
+      font-size: 0.98rem;
+      margin: 0 0 2rem;
+    }
+
+    .nav a {
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .nav a:hover {
+      text-decoration: underline;
     }
 
     .header {
@@ -38,15 +62,10 @@
       min-width: 0;
     }
 
-    .name-link {
-      color: inherit;
-      text-decoration: none;
-    }
-
     .profile-photo {
       flex-shrink: 0;
-      width: 110px;
-      height: 110px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid rgba(0,0,0,0.08);
@@ -61,29 +80,29 @@
 
     h1 {
       font-family: 'Source Serif Pro', serif;
-      font-size: clamp(2.1rem, 4vw, 2.6rem);
+      font-size: clamp(2.2rem, 4.5vw, 2.8rem);
       font-weight: 600;
       margin: 0 0 0.2em;
       color: var(--text);
     }
 
     h2 {
-      font-size: 1rem;
+      font-size: 1.05rem;
       font-weight: 400;
       color: var(--subtext);
-      margin: 0 0 0.6rem;
+      margin: 0 0 0.8rem;
     }
 
     h3 {
       font-size: 1.05rem;
       font-weight: 600;
-      margin: 2rem 0 0.4rem;
+      margin: 2.0rem 0 0.4rem;
       color: var(--text);
     }
 
     p {
       margin: 0.9rem 0;
-      font-size: 1.02rem;
+      font-size: 1.05rem;
     }
 
     a {
@@ -96,21 +115,8 @@
       text-decoration: underline;
     }
 
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.1rem;
-      font-size: 0.96rem;
-      margin: 0.3rem 0 0;
-    }
-
-    .nav a {
-      font-weight: 500;
-      letter-spacing: 0.01em;
-    }
-
     ul {
-      margin: 0.2rem 0 1.0rem;
+      margin: 0.4rem 0 1.0rem;
       padding-left: 1.1rem;
       font-size: 1.0rem;
     }
@@ -122,20 +128,31 @@
     }
 
     @media (max-width: 650px) {
+      main {
+        margin-top: 3vh;
+      }
+
       .header {
         flex-direction: column-reverse;
         align-items: flex-start;
       }
 
       .profile-photo {
-        width: 100px;
-        height: 100px;
+        width: 110px;
+        height: 110px;
       }
     }
   </style>
 </head>
 <body>
   <main>
+    <!-- 顶部导航 -->
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="teaching.html">Teaching</a>
+    </nav>
+
     <div class="header">
       <img
         src="FangzhouSha.png"
@@ -144,54 +161,42 @@
         id="profile-photo"
       >
       <div class="header-text">
-        <a href="index.html" class="name-link">
-          <h1>Fangzhou Sha</h1>
-        </a>
+        <h1>Fangzhou Sha</h1>
         <h2>Ph.D. Student in Economics · Southern Methodist University</h2>
-        <nav class="nav">
-          <a href="index.html#cv">CV</a>
-          <a href="research.html">Research</a>
-          <a href="teaching.html">Teaching</a>
-        </nav>
       </div>
     </div>
 
     <p>
-      I aim to make macroeconomics clear, structured, and relevant. I focus on economic intuition, step-by-step derivations, and a classroom where students feel comfortable asking questions.
+      I aim to make macroeconomics clear, structured, and relevant, with a classroom culture where students feel comfortable asking questions.
     </p>
 
-    <h3>Instructor</h3>
-    <p>
-      <strong>ECON 3302: Intermediate Macroeconomics</strong>, Southern Methodist University, Summer II 2024.
-    </p>
-    <p>
-      In my intermediate macroeconomics course, I revisited core mathematical tools such as derivatives to build a common foundation, wrote out derivations in detail using a tablet projected in class, and shared slides and typed lecture notes after each meeting. I held extended office hours and used current policy debates—such as recent Federal Reserve decisions and government spending programs—to connect the models to real-world questions students care about.
-    </p>
+    <section>
+      <h3>Award and Recognition</h3>
+      <p>
+        I received the <strong>Outstanding Graduate Student Instruction Award</strong> at Southern Methodist University in 2025.  
+        In that year, the award was given to one graduate independent lecturer and two teaching assistants; I was the independent lecturer recipient.
+      </p>
+      <p>
+        Following the award, I was invited to a teaching workshop to share my experience and classroom practices with other graduate instructors.
+      </p>
+    </section>
 
-    <h3>Teaching Assistant</h3>
-    <p>
-      At Southern Methodist University and the University of Wisconsin–Madison, I have served as a teaching assistant for:
-    </p>
-    <ul>
-      <li>Intermediate Macroeconomics</li>
-      <li>Applied Econometrics</li>
-      <li>Principles of Macroeconomics (Honors)</li>
-      <li>Microeconomic Theory</li>
-      <li>Predictive Analytics and Forecasting</li>
-      <li>State and Local Government</li>
-      <li>Advanced Intermediate Macroeconomic Theory</li>
-    </ul>
-    <p>
-      My responsibilities have included leading recitations, holding review sessions, grading, and mentoring students on problem sets, empirical projects, and research ideas.
-    </p>
+    <section>
+      <h3>Instructor</h3>
+      <p>
+        <strong>ECON 3302: Intermediate Macroeconomics</strong>, Southern Methodist University, Summer II 2024.
+      </p>
+      <p>
+        I emphasized step-by-step derivations, revisited key mathematical tools, and used current policy debates to connect macroeconomic models to students’ everyday questions.
+      </p>
+    </section>
 
-    <h3>Recognition and Interests</h3>
-    <p>
-      I received the <strong>Outstanding Graduate Student Instruction Award</strong> at Southern Methodist University in 2025, a university-wide teaching award recognizing three graduate instructors each year.
-    </p>
-    <p>
-      Teaching interests: macroeconomics (principles and intermediate), monetary and fiscal policy, quantitative methods and forecasting, econometrics, and inequality and public policy.
-    </p>
+    <section>
+      <h3>Teaching Assistant</h3>
+      <p>
+        At Southern Methodist University and the University of Wisconsin–Madison, I have served as a teaching assistant for courses including intermediate macroeconomics, applied econometrics, honors principles of macroeconomics, microeconomic theory, predictive analytics and forecasting, state and local government, and advanced intermediate macroeconomic theory.
+      </p>
+    </section>
 
     <footer>Last updated November 2025</footer>
   </main>
