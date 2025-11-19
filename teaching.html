@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Teaching · Fangzhou Sha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500&family=Source+Serif+Pro:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #eaf4f4;
+      --text: #222;
+      --subtext: #556;
+      --link: #0074a2;
+    }
+
+    body {
+      margin: 0;
+      padding: 0 1.2rem;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Source Sans 3', system-ui, sans-serif;
+      line-height: 1.8;
+    }
+
+    main {
+      max-width: 780px;
+      margin: 6vh auto 8vh;
+    }
+
+    .header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    .header-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .name-link {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .profile-photo {
+      flex-shrink: 0;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(0,0,0,0.08);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      cursor: pointer;
+      transition: transform 0.15s ease-out;
+    }
+
+    .profile-photo:hover {
+      transform: scale(1.02);
+    }
+
+    h1 {
+      font-family: 'Source Serif Pro', serif;
+      font-size: clamp(2.1rem, 4vw, 2.6rem);
+      font-weight: 600;
+      margin: 0 0 0.2em;
+      color: var(--text);
+    }
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--subtext);
+      margin: 0 0 0.6rem;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 2rem 0 0.4rem;
+      color: var(--text);
+    }
+
+    p {
+      margin: 0.9rem 0;
+      font-size: 1.02rem;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.1rem;
+      font-size: 0.96rem;
+      margin: 0.3rem 0 0;
+    }
+
+    .nav a {
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+
+    ul {
+      margin: 0.2rem 0 1.0rem;
+      padding-left: 1.1rem;
+      font-size: 1.0rem;
+    }
+
+    footer {
+      margin-top: 3.0rem;
+      font-size: 0.86rem;
+      color: var(--subtext);
+    }
+
+    @media (max-width: 650px) {
+      .header {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+      }
+
+      .profile-photo {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="header">
+      <img
+        src="FangzhouSha.png"
+        alt="Photo of Fangzhou Sha"
+        class="profile-photo"
+        id="profile-photo"
+      >
+      <div class="header-text">
+        <a href="index.html" class="name-link">
+          <h1>Fangzhou Sha</h1>
+        </a>
+        <h2>Ph.D. Student in Economics · Southern Methodist University</h2>
+        <nav class="nav">
+          <a href="index.html#cv">CV</a>
+          <a href="research.html">Research</a>
+          <a href="teaching.html">Teaching</a>
+        </nav>
+      </div>
+    </div>
+
+    <p>
+      I aim to make macroeconomics clear, structured, and relevant. I focus on economic intuition, step-by-step derivations, and a classroom where students feel comfortable asking questions.
+    </p>
+
+    <h3>Instructor</h3>
+    <p>
+      <strong>ECON 3302: Intermediate Macroeconomics</strong>, Southern Methodist University, Summer II 2024.
+    </p>
+    <p>
+      In my intermediate macroeconomics course, I revisited core mathematical tools such as derivatives to build a common foundation, wrote out derivations in detail using a tablet projected in class, and shared slides and typed lecture notes after each meeting. I held extended office hours and used current policy debates—such as recent Federal Reserve decisions and government spending programs—to connect the models to real-world questions students care about.
+    </p>
+
+    <h3>Teaching Assistant</h3>
+    <p>
+      At Southern Methodist University and the University of Wisconsin–Madison, I have served as a teaching assistant for:
+    </p>
+    <ul>
+      <li>Intermediate Macroeconomics</li>
+      <li>Applied Econometrics</li>
+      <li>Principles of Macroeconomics (Honors)</li>
+      <li>Microeconomic Theory</li>
+      <li>Predictive Analytics and Forecasting</li>
+      <li>State and Local Government</li>
+      <li>Advanced Intermediate Macroeconomic Theory</li>
+    </ul>
+    <p>
+      My responsibilities have included leading recitations, holding review sessions, grading, and mentoring students on problem sets, empirical projects, and research ideas.
+    </p>
+
+    <h3>Recognition and Interests</h3>
+    <p>
+      I received the <strong>Outstanding Graduate Student Instruction Award</strong> at Southern Methodist University in 2025, a university-wide teaching award recognizing three graduate instructors each year.
+    </p>
+    <p>
+      Teaching interests: macroeconomics (principles and intermediate), monetary and fiscal policy, quantitative methods and forecasting, econometrics, and inequality and public policy.
+    </p>
+
+    <footer>Last updated November 2025</footer>
+  </main>
+
+  <script>
+    const img1 = "FangzhouSha.png";
+    const img2 = "FangzhouSha_alt.png";
+
+    const profileImg = document.getElementById("profile-photo");
+    let showingFirst = true;
+
+    profileImg.addEventListener("click", () => {
+      showingFirst = !showingFirst;
+      profileImg.src = showingFirst ? img1 : img2;
+    });
+  </script>
+</body>
+</html>
