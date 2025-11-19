@@ -50,6 +50,12 @@
       object-fit: cover;
       border: 2px solid rgba(0,0,0,0.08);
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      cursor: pointer; /* 鼠标变成小手，提示可以点击 */
+      transition: transform 0.15s ease-out;
+    }
+
+    .profile-photo:hover {
+      transform: scale(1.02);
     }
 
     h1 {
@@ -89,7 +95,7 @@
       text-decoration: underline;
     }
 
-    /* 顶部导航：改成锚点 */
+    /* 顶部导航：锚点 */
     .nav {
       display: flex;
       flex-wrap: wrap;
@@ -140,7 +146,13 @@
   <main>
     <div class="header">
       <!-- 右侧：你的照片 -->
-      <img src="FangzhouSha.png" alt="Photo of Fangzhou Sha" class="profile-photo">
+      <!-- 加上 id="profile-photo" 方便 JS 选中 -->
+      <img
+        src="FangzhouSha.png"
+        alt="Photo of Fangzhou Sha"
+        class="profile-photo"
+        id="profile-photo"
+      >
       
       <!-- 左侧：名字、头衔、导航 -->
       <div class="header-text">
@@ -171,8 +183,7 @@
     <section id="research">
       <h3>Research</h3>
       <p>
-        Working papers and projects will be listed here.  
-        <!-- 你之后可以在这里加：标题、合作者、摘要简句、arXiv / SSRN / PDF 链接等 -->
+        Working papers and projects will be listed here.
       </p>
     </section>
 
@@ -181,13 +192,27 @@
       <h3>Teaching</h3>
       <p>
         Teaching experience, courses, and evaluations will be summarized here.
-        <!-- 之后可以放：任课课程、学期、职责（instructor / TA）、教学奖项、教学理念链接等 -->
       </p>
     </section>
 
     <p>📧 <a href="mailto:fsha@smu.edu">fsha@smu.edu</a></p>
 
-    <footer>Last updated November 2025</footer>
+    <footer>Last updated July 2025</footer>
   </main>
+
+  <!-- 切换头像的小脚本 -->
+  <script>
+    // 这里写两张照片的文件名：
+    const img1 = "FangzhouSha.png";       // 默认照片
+    const img2 = "FangzhouSha_alt.png";   // 第二张照片（请把这个文件名改成你的真实文件）
+
+    const profileImg = document.getElementById("profile-photo");
+    let showingFirst = true;
+
+    profileImg.addEventListener("click", () => {
+      showingFirst = !showingFirst;
+      profileImg.src = showingFirst ? img1 : img2;
+    });
+  </script>
 </body>
 </html>
