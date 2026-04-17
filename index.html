@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Fangzhou Sha</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500&family=Source+Serif+Pro:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&family=Source+Serif+Pro:wght@600&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #eaf4f4;
@@ -19,29 +19,29 @@
 
     body {
       margin: 0;
-      padding: 0 1.2rem;
+      padding: 0 1.4rem;
       background: var(--bg);
       color: var(--text);
       font-family: 'Source Sans 3', system-ui, sans-serif;
-      line-height: 1.8;
+      line-height: 1.9;
+      font-size: 18px;
     }
 
     main {
-      max-width: 680px;
-      margin: 5vh auto 10vh;
+      max-width: 760px;
+      margin: 4vh auto 8vh;
     }
 
-    /* 左上导航 */
     .nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.1rem;
-      font-size: 0.98rem;
-      margin: 0 0 2rem;
+      gap: 1.4rem;
+      font-size: 1.08rem;
+      margin: 0 0 2.2rem;
     }
 
     .nav a {
-      font-weight: 500;
+      font-weight: 600;
       letter-spacing: 0.01em;
       color: var(--link);
       text-decoration: none;
@@ -54,7 +54,8 @@
     .header {
       display: flex;
       align-items: flex-start;
-      gap: 1.5rem;
+      gap: 1.7rem;
+      margin-bottom: 1.2rem;
     }
 
     .header-text {
@@ -64,8 +65,8 @@
 
     .profile-photo {
       flex-shrink: 0;
-      width: 120px;
-      height: 120px;
+      width: 148px;
+      height: 148px;
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid rgba(0,0,0,0.08);
@@ -80,29 +81,32 @@
 
     h1 {
       font-family: 'Source Serif Pro', serif;
-      font-size: clamp(2.4rem, 5vw, 3rem);
+      font-size: clamp(2.7rem, 5vw, 3.3rem);
       font-weight: 600;
-      margin: 0 0 0.2em;
+      margin: 0 0 0.18em;
       color: var(--text);
+      line-height: 1.15;
     }
 
     h2 {
-      font-size: 1.1rem;
+      font-size: 1.22rem;
       font-weight: 400;
       color: var(--subtext);
-      margin: 0 0 0.8rem;
+      margin: 0 0 0.6rem;
+      line-height: 1.5;
     }
 
     h3 {
-      font-size: 1.05rem;
+      font-size: 1.4rem;
       font-weight: 600;
-      margin: 2.2rem 0 0.4rem;
+      margin: 2.8rem 0 0.7rem;
       color: var(--text);
+      font-family: 'Source Serif Pro', serif;
     }
 
     p {
-      margin: 1.0rem 0;
-      font-size: 1.05rem;
+      margin: 1rem 0;
+      font-size: 1.1rem;
     }
 
     a {
@@ -115,18 +119,55 @@
       text-decoration: underline;
     }
 
+    .paper-entry,
+    .teaching-entry {
+      margin: 1rem 0 1.5rem;
+      font-size: 1.05rem;
+    }
+
+    .paper-entry strong,
+    .teaching-entry strong {
+      font-size: 1.08rem;
+      font-weight: 600;
+    }
+
+    .paper-note,
+    .subtle {
+      color: var(--subtext);
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
     .doc-links {
-      margin-top: 0.5rem;
-      font-size: 0.98rem;
+      margin-top: 0.35rem;
+      font-size: 1.03rem;
+    }
+
+    .group-label {
+      margin-top: 1.3rem;
+      margin-bottom: 0.35rem;
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .contact {
+      margin-top: 1.8rem;
+      font-size: 1.08rem;
     }
 
     footer {
-      margin-top: 3.5rem;
-      font-size: 0.88rem;
+      margin-top: 4rem;
+      font-size: 0.98rem;
       color: var(--subtext);
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
+      body {
+        font-size: 17px;
+        padding: 0 1rem;
+      }
+
       main {
         margin-top: 3vh;
       }
@@ -137,68 +178,117 @@
       }
 
       .profile-photo {
-        width: 110px;
-        height: 110px;
+        width: 126px;
+        height: 126px;
+      }
+
+      h3 {
+        font-size: 1.3rem;
       }
     }
   </style>
 </head>
 <body>
   <main>
-    <!-- 左上导航 -->
     <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="teaching.html">Teaching</a>
+      <a href="#home">Home</a>
+      <a href="#research">Research</a>
+      <a href="#teaching">Teaching</a>
     </nav>
 
-    <div class="header">
-      <!-- 右侧：照片（可点击切换） -->
-      <img
-        src="FangzhouSha.png"
-        alt="Photo of Fangzhou Sha"
-        class="profile-photo"
-        id="profile-photo"
-      >
-      
-      <!-- 左侧：名字、头衔 -->
-      <div class="header-text">
-        <h1>Fangzhou Sha</h1>
-        <h2>Ph.D. Student in Economics · Southern Methodist University</h2>
+    <section id="home">
+      <div class="header">
+        <img
+          src="FangzhouSha.png"
+          alt="Photo of Fangzhou Sha"
+          class="profile-photo"
+          id="profile-photo"
+        >
+
+        <div class="header-text">
+          <h1>Fangzhou Sha</h1>
+          <h2>Ph.D. Candidate in Economics · Southern Methodist University</h2>
+        </div>
       </div>
-    </div>
 
-    <p>I am a doctoral researcher in macroeconomics, focusing on monetary and fiscal policy using heterogeneous-agent models.</p>
+      <p>
+        I am a Ph.D. candidate in Economics at Southern Methodist University. My research is in macroeconomics, with a focus on monetary-fiscal interactions, inflation, and heterogeneous-agent models.
+      </p>
 
-    <!-- CV Section -->
-    <section id="cv">
-      <h3>Curriculum Vitae</h3>
-      <p class="doc-links">
-        📄 <a href="FangzhouSha_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+      <div class="doc-links">
+        📄 <a href="FangzhouSha_CV.pdf" target="_blank" rel="noopener">Curriculum Vitae (PDF)</a>
+      </div>
+
+      <p class="contact">
+        📧 <a href="mailto:fsha@smu.edu">fsha@smu.edu</a>
       </p>
     </section>
 
-    <!-- Job Market Paper Section -->
-    <section id="jmp">
-      <h3>Job Market Paper</h3>
-      <p class="doc-links">
+    <section id="research">
+      <h3>Research</h3>
+
+      <div class="paper-entry">
+        <strong>Job Market Paper</strong><br>
         <strong>Unfunded Fiscal Policy with Heterogeneity in Household Portfolios</strong>
-        <span style="font-size:0.95rem; color: var(--subtext); font-weight:400;">
-          · Best Third-Year Paper, SMU Econ
-        </span><br>
-        📄 <a href="FangzhouSha_JMP.pdf" target="_blank" rel="noopener">Job Market Paper (PDF)</a>
-      </p>
+        <span class="paper-note"> · Best Third-Year Paper, SMU Econ</span>
+        <div class="doc-links">
+          📄 <a href="FangzhouSha_JMP.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
+        </div>
+      </div>
+
+      <div class="group-label">Working Papers</div>
+
+      <div class="paper-entry">
+        <strong>Fiscal Policy, Inflation Stabilization, and Monetary-Fiscal Interaction</strong>
+        <div class="doc-links">
+          📄 <a href="FiscalPolicy_InflationStabilization_MonetaryFiscalInteraction.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
+        </div>
+      </div>
+
+      <div class="paper-entry">
+        <strong>Identifying the Effects of Funded vs. Unfunded Fiscal Shocks</strong>
+        <span class="paper-note"> with Nathan S. Balke and Carlos Zarazaga</span>
+        <div class="doc-links">
+          📊 <a href="Funded_vs_Unfunded_FiscalShocks_Slides.pdf" target="_blank" rel="noopener">Slides (PDF)</a>
+        </div>
+      </div>
+
+      <div class="group-label">Work in Progress</div>
+
+      <div class="paper-entry">
+        <strong>Financial Frictions, Firm Exit, and Aggregate Dynamics</strong>
+        <span class="paper-note"> with Nathan S. Balke and Enrique Martínez-García</span>
+      </div>
+
+      <div class="paper-entry">
+        <strong>High Dimensional Predictive Regression with Cointegration</strong>
+        <span class="paper-note"> with Zhan Gao</span>
+      </div>
     </section>
 
-    <p>📧 <a href="mailto:fsha@smu.edu">fsha@smu.edu</a></p>
+    <section id="teaching">
+      <h3>Teaching</h3>
 
-    <footer>Last updated November 2025</footer>
+      <div class="teaching-entry">
+        <div class="group-label">Southern Methodist University</div>
+
+        <p><strong>Instructor</strong><br>
+        Intermediate Macroeconomics</p>
+
+        <p><strong>Invited Speaker</strong><br>
+        Teaching Strategies and Tools Workshop, Moody School Leadership Academy</p>
+
+        <p><strong>Teaching Assistant</strong><br>
+        Intermediate Macroeconomics; Applied Econometric Analysis; Principles of Macroeconomics (Honors); Micro Theory II; Predictive Analytics; Forecasting</p>
+      </div>
+    </section>
+
+    <footer>Last updated April 2026</footer>
   </main>
 
-  <!-- 切换头像脚本 -->
   <script>
-    const img1 = "FangzhouSha.png";       // 默认照片
-    const img2 = "FangzhouSha_alt.png";   // 第二张照片（改成你的真实文件名）
+    const img1 = "FangzhouSha.png";
+    const img2 = "FangzhouSha_alt.png";
 
     const profileImg = document.getElementById("profile-photo");
     let showingFirst = true;
