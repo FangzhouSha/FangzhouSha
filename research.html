@@ -31,7 +31,6 @@
       margin: 5vh auto 10vh;
     }
 
-    /* 左上导航：和主页统一 */
     .nav {
       display: flex;
       flex-wrap: wrap;
@@ -101,7 +100,7 @@
     }
 
     p {
-      margin: 1.0rem 0;
+      margin: 1rem 0;
       font-size: 1.05rem;
     }
 
@@ -115,16 +114,23 @@
       text-decoration: underline;
     }
 
-    /* 论文列表字号：与 .doc-links 对齐 */
-    ul {
-      margin: 0.4rem 0 1.0rem;
-      padding-left: 1.1rem;
+    .paper-entry {
+      margin: 0.7rem 0 1.3rem;
       font-size: 0.98rem;
     }
 
-    /* 文档链接：和主页保持一致 */
+    .paper-entry strong {
+      font-size: 1rem;
+    }
+
+    .paper-note {
+      color: var(--subtext);
+      font-size: 0.95rem;
+      font-weight: 400;
+    }
+
     .doc-links {
-      margin-top: 0.5rem;
+      margin-top: 0.3rem;
       font-size: 0.98rem;
     }
 
@@ -153,8 +159,7 @@
 </head>
 <body>
   <main>
-    <!-- 左上导航：和主页一致 -->
-   <nav class="nav">
+    <nav class="nav">
       <a href="index.html">Home</a>
       <a href="research.html">Research</a>
       <a href="teaching.html">Teaching</a>
@@ -175,34 +180,54 @@
 
     <section>
       <h3>Job Market Paper</h3>
-      <p class="doc-links">
+      <div class="paper-entry">
         <strong>Unfunded Fiscal Policy with Heterogeneity in Household Portfolios</strong>
-        <span style="font-size:0.95rem; color: var(--subtext); font-weight:400;">
-          · Best Third-Year Paper, SMU&nbsp;Econ
-        </span><br>
-        📄 <a href="FangzhouSha_JMP.pdf" target="_blank" rel="noopener">Job Market Paper (PDF)</a>
-      </p>
+        <span class="paper-note"> · Best Third-Year Paper, SMU Econ</span>
+        <div class="doc-links">
+          📄 <a href="FangzhouSha_JMP.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
+        </div>
+      </div>
     </section>
 
     <section>
       <h3>Working Papers</h3>
-      <ul>
-        <li>
-          <strong>Taylor Rules and Fiscal Attention to Inflation</strong>
-        </li>
-        <li>
-          <strong>Identifying the Effects of Funded vs. Unfunded Fiscal Shocks</strong> (with Nathan S. Balke and Carlos Zarazaga)
-        </li>
-      </ul>
+
+      <div class="paper-entry">
+        <strong>Fiscal Policy, Inflation Stabilization, and Monetary-Fiscal Interaction</strong>
+        <div class="doc-links">
+          📄 <a href="FiscalPolicy_InflationStabilization_MonetaryFiscalInteraction.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
+        </div>
+      </div>
+
+      <div class="paper-entry">
+        <strong>Identifying the Effects of Funded vs. Unfunded Fiscal Shocks</strong>
+        <span class="paper-note"> with Nathan S. Balke and Carlos Zarazaga</span>
+        <div class="doc-links">
+          📊 <a href="Funded_vs_Unfunded_FiscalShocks_Slides.pdf" target="_blank" rel="noopener">Slides (PDF)</a>
+        </div>
+      </div>
     </section>
 
-    <footer>Last updated November 2025</footer>
+    <section>
+      <h3>Work in Progress</h3>
+
+      <div class="paper-entry">
+        <strong>Financial Frictions, Firm Exit, and Aggregate Dynamics</strong>
+        <span class="paper-note"> with Nathan S. Balke and Enrique Martínez-García</span>
+      </div>
+
+      <div class="paper-entry">
+        <strong>High Dimensional Predictive Regression with Cointegration</strong>
+        <span class="paper-note"> with Zhan Gao</span>
+      </div>
+    </section>
+
+    <footer>Last updated April 2026</footer>
   </main>
 
-  <!-- 切换头像脚本：和主页一致 -->
   <script>
-    const img1 = "FangzhouSha.png";       // 默认照片
-    const img2 = "FangzhouSha_alt.png";   // 第二张照片（改成你的真实文件名）
+    const img1 = "FangzhouSha.png";
+    const img2 = "FangzhouSha_alt.png";
 
     const profileImg = document.getElementById("profile-photo");
     let showingFirst = true;
