@@ -11,6 +11,7 @@
       --text: #222;
       --subtext: #556;
       --link: #0074a2;
+      --nav-height: 72px;
     }
 
     html {
@@ -19,25 +20,34 @@
 
     body {
       margin: 0;
-      padding: 0 1.4rem;
+      padding: 0 1.5rem;
       background: var(--bg);
       color: var(--text);
       font-family: 'Source Sans 3', system-ui, sans-serif;
-      line-height: 1.9;
-      font-size: 18px;
+      line-height: 1.95;
+      font-size: 19px;
     }
 
     main {
-      max-width: 760px;
-      margin: 4vh auto 8vh;
+      max-width: 800px;
+      margin: calc(var(--nav-height) + 3.5vh) auto 8vh;
     }
 
     .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
       display: flex;
       flex-wrap: wrap;
-      gap: 1.4rem;
-      font-size: 1.08rem;
-      margin: 0 0 2.2rem;
+      gap: 1.6rem;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      font-size: 1.14rem;
+      background: rgba(234, 244, 244, 0.96);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 1px 8px rgba(0,0,0,0.06);
     }
 
     .nav a {
@@ -51,11 +61,15 @@
       text-decoration: underline;
     }
 
+    section {
+      scroll-margin-top: 95px;
+    }
+
     .header {
       display: flex;
       align-items: flex-start;
-      gap: 1.7rem;
-      margin-bottom: 1.2rem;
+      gap: 1.9rem;
+      margin-bottom: 1.4rem;
     }
 
     .header-text {
@@ -65,8 +79,8 @@
 
     .profile-photo {
       flex-shrink: 0;
-      width: 148px;
-      height: 148px;
+      width: 164px;
+      height: 164px;
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid rgba(0,0,0,0.08);
@@ -81,32 +95,32 @@
 
     h1 {
       font-family: 'Source Serif Pro', serif;
-      font-size: clamp(2.7rem, 5vw, 3.3rem);
+      font-size: clamp(2.9rem, 5vw, 3.5rem);
       font-weight: 600;
       margin: 0 0 0.18em;
       color: var(--text);
-      line-height: 1.15;
+      line-height: 1.12;
     }
 
     h2 {
-      font-size: 1.22rem;
+      font-size: 1.3rem;
       font-weight: 400;
       color: var(--subtext);
-      margin: 0 0 0.6rem;
+      margin: 0 0 0.65rem;
       line-height: 1.5;
     }
 
     h3 {
-      font-size: 1.4rem;
+      font-size: 1.52rem;
       font-weight: 600;
-      margin: 2.8rem 0 0.7rem;
+      margin: 3rem 0 0.8rem;
       color: var(--text);
       font-family: 'Source Serif Pro', serif;
     }
 
     p {
       margin: 1rem 0;
-      font-size: 1.1rem;
+      font-size: 1.14rem;
     }
 
     a {
@@ -121,55 +135,65 @@
 
     .paper-entry,
     .teaching-entry {
-      margin: 1rem 0 1.5rem;
-      font-size: 1.05rem;
+      margin: 1.1rem 0 1.65rem;
+      font-size: 1.1rem;
     }
 
     .paper-entry strong,
     .teaching-entry strong {
-      font-size: 1.08rem;
+      font-size: 1.12rem;
       font-weight: 600;
     }
 
     .paper-note,
     .subtle {
       color: var(--subtext);
-      font-size: 1rem;
+      font-size: 1.03rem;
       font-weight: 400;
     }
 
     .doc-links {
       margin-top: 0.35rem;
-      font-size: 1.03rem;
+      font-size: 1.08rem;
     }
 
     .group-label {
-      margin-top: 1.3rem;
+      margin-top: 1.45rem;
       margin-bottom: 0.35rem;
-      font-size: 1.08rem;
+      font-size: 1.12rem;
       font-weight: 600;
       color: var(--text);
     }
 
     .contact {
-      margin-top: 1.8rem;
-      font-size: 1.08rem;
+      margin-top: 1.9rem;
+      font-size: 1.1rem;
     }
 
     footer {
       margin-top: 4rem;
-      font-size: 0.98rem;
+      font-size: 1rem;
       color: var(--subtext);
     }
 
     @media (max-width: 700px) {
+      :root {
+        --nav-height: 68px;
+      }
+
       body {
-        font-size: 17px;
+        font-size: 18px;
         padding: 0 1rem;
       }
 
       main {
-        margin-top: 3vh;
+        margin-top: calc(var(--nav-height) + 2.5vh);
+      }
+
+      .nav {
+        gap: 1.2rem;
+        padding: 0.9rem 1rem;
+        font-size: 1.04rem;
       }
 
       .header {
@@ -178,24 +202,24 @@
       }
 
       .profile-photo {
-        width: 126px;
-        height: 126px;
+        width: 136px;
+        height: 136px;
       }
 
       h3 {
-        font-size: 1.3rem;
+        font-size: 1.38rem;
       }
     }
   </style>
 </head>
 <body>
-  <main>
-    <nav class="nav">
-      <a href="#home">Home</a>
-      <a href="#research">Research</a>
-      <a href="#teaching">Teaching</a>
-    </nav>
+  <nav class="nav">
+    <a href="#home">Home</a>
+    <a href="#research">Research</a>
+    <a href="#teaching">Teaching</a>
+  </nav>
 
+  <main>
     <section id="home">
       <div class="header">
         <img
@@ -216,11 +240,11 @@
       </p>
 
       <div class="doc-links">
-        📄 <a href="FangzhouSha_CV.pdf" target="_blank" rel="noopener">Curriculum Vitae (PDF)</a>
+        <a href="FangzhouSha_CV.pdf" target="_blank" rel="noopener">Curriculum Vitae (PDF)</a>
       </div>
 
       <p class="contact">
-        📧 <a href="mailto:fsha@smu.edu">fsha@smu.edu</a>
+        <a href="mailto:fsha@smu.edu">fsha@smu.edu</a>
       </p>
     </section>
 
@@ -232,7 +256,7 @@
         <strong>Unfunded Fiscal Policy with Heterogeneity in Household Portfolios</strong>
         <span class="paper-note"> · Best Third-Year Paper, SMU Econ</span>
         <div class="doc-links">
-          📄 <a href="FangzhouSha_JMP.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
+          <a href="FangzhouSha_JMP.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
         </div>
       </div>
 
@@ -241,7 +265,7 @@
       <div class="paper-entry">
         <strong>Fiscal Policy, Inflation Stabilization, and Monetary-Fiscal Interaction</strong>
         <div class="doc-links">
-          📄 <a href="Fiscal_Policy__Inflation_Stabilization__and_Monetary_Fiscal_Interaction.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
+          <a href="Fiscal_Policy__Inflation_Stabilization__and_Monetary_Fiscal_Interaction.pdf" target="_blank" rel="noopener">Paper (PDF)</a>
         </div>
       </div>
 
@@ -249,7 +273,7 @@
         <strong>Identifying the Effects of Funded vs. Unfunded Fiscal Shocks</strong>
         <span class="paper-note"> with Nathan S. Balke and Carlos Zarazaga</span>
         <div class="doc-links">
-          📊 <a href="Balke_Sha_Zarazaga_Pre_Identifying.pdf" target="_blank" rel="noopener">Slides (PDF)</a>
+          <a href="Balke_Sha_Zarazaga_Pre_Identifying.pdf" target="_blank" rel="noopener">Slides (PDF)</a>
         </div>
       </div>
 
